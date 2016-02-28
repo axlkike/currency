@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+	<div th:fragment="footer">
+		<hr/>
+		<div id="userinfo">
+		    <div sec:authorize="hasAnyRole('ADMIN', 'USER')">
+				<span th:text="#{label_welcome} + ', ' + ${#authentication.name}">Welcome, User</span>
+			</div>
+		</div>
+		
+		<div>
+			<a href="list.html" th:href="@{?lang=en}" th:text="#{label_en_CA}">English</a> |
+			<a href="list.html"	th:href="@{?lang=es}" th:text="#{label_es_CA}">Espa&ntilde;ol</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body th:fragment="curropts" th:remove="tag">
+    <option value='USD' data-subtext='United States Dollar'>USD</option>
+    <option value='EUR' data-subtext='Euro'>EUR</option>
+    <option value='GBP' data-subtext='British Pound Sterling'>GBP</option>
+    <option value='JPY' data-subtext='Japanese Yen'>JPY</option>
+    <option value='CNY' data-subtext='Chinese Yuan'>CNY</option>
+    <option value='AUD' data-subtext='Australian Dollar'>AUD</option>
+    <optgroup>
+        <option value='AED' data-subtext='United Arab Emirates Dirham'>AED</option>
+        <option value='AFN' data-subtext='Afghan Afghani'>AFN</option>
+        <option value='ALL' data-subtext='Albanian Lek'>ALL</option>
+        <option value='AMD' data-subtext='Armenian Dram'>AMD</option>
+        <option value='ANG' data-subtext='Netherlands Antillean Guilder'>ANG</option>
+        <option value='AOA' data-subtext='Angolan Kwanza'>AOA</option>
+        <option value='ARS' data-subtext='Argentine Peso'>ARS</option>
+        <option value='AWG' data-subtext='Aruban Florin'>AWG</option>
+        <option value='AZN' data-subtext='Azerbaijani Manat'>AZN</option>
+        <option value='BAM' data-subtext='Bosnia-Herzegovina Convertible Mark'>BAM</option>
+        <option value='BBD' data-subtext='Barbadian Dollar'>BBD</option>
+        <option value='BDT' data-subtext='Bangladeshi Taka'>BDT</option>
+        <option value='BGN' data-subtext='Bulgarian Lev'>BGN</option>
+        <option value='BHD' data-subtext='Bahraini Dinar'>BHD</option>
+        <option value='BIF' data-subtext='Burundian Franc'>BIF</option>
+        <option value='BMD' data-subtext='Bermudan Dollar'>BMD</option>
+        <option value='BND' data-subtext='Brunei Dollar'>BND</option>
+        <option value='BOB' data-subtext='Bolivian Boliviano'>BOB</option>
+        <option value='BRL' data-subtext='Brazilian Real'>BRL</option>
+        <option value='BSD' data-subtext='Bahamian Dollar'>BSD</option>
+        <option value='BTC' data-subtext='Bitcoin'>BTC</option>
+        <option value='BTN' data-subtext='Bhutanese Ngultrum'>BTN</option>
+        <option value='BWP' data-subtext='Botswanan Pula'>BWP</option>
+        <option value='BYR' data-subtext='Belarusian Ruble'>BYR</option>
+        <option value='BZD' data-subtext='Belize Dollar'>BZD</option>
+        <option value='CAD' data-subtext='Canadian Dollar'>CAD</option>
+        <option value='CDF' data-subtext='Congolese Franc'>CDF</option>
+        <option value='CHF' data-subtext='Swiss Franc'>CHF</option>
+        <option value='CLF' data-subtext='Chilean Unit of Account (UF)'>CLF</option>
+        <option value='CLP' data-subtext='Chilean Peso'>CLP</option>
+        <option value='COP' data-subtext='Colombian Peso'>COP</option>
+        <option value='CRC' data-subtext='Costa Rican Colón'>CRC</option>
+        <option value='CUC' data-subtext='Cuba Convertible Peso'>CRC</option>
+        <option value='CUP' data-subtext='Cuban Peso'>CUP</option>
+        <option value='CVE' data-subtext='Cape Verdean Escudo'>CVE</option>
+        <option value='CZK' data-subtext='Czech Republic Koruna'>CZK</option>
+        <option value='DJF' data-subtext='Djiboutian Franc'>DJF</option>
+        <option value='DKK' data-subtext='Danish Krone'>DKK</option>
+        <option value='DOP' data-subtext='Dominican Peso'>DOP</option>
+        <option value='DZD' data-subtext='Algerian Dinar'>DZD</option>
+        <option value='EEK' data-subtext='Estonian Kroon'>EEK</option>
+        <option value='EGP' data-subtext='Egyptian Pound'>EGP</option>
+        <option value='ERN' data-subtext='Eritrean Nakfa'>ERN</option>
+        <option value='ETB' data-subtext='Ethiopian Birr'>ETB</option>
+        <option value='FJD' data-subtext='Fijian Dollar'>FJD</option>
+        <option value='FKP' data-subtext='Falkland Islands Pound'>FKP</option>
+        <option value='GEL' data-subtext='Georgian Lari'>GEL</option>
+        <option value='GGP' data-subtext='Guernsey Pound'>GGP</option>
+        <option value='GHS' data-subtext='Ghanaian Cedi'>GHS</option>
+        <option value='GIP' data-subtext='Gibraltar Pound'>GIP</option>
+        <option value='GMD' data-subtext='Gambian Dalasi'>GMD</option>
+        <option value='GNF' data-subtext='Guinean Franc'>GNF</option>
+        <option value='GTQ' data-subtext='Guatemalan Quetzal'>GTQ</option>
+        <option value='GYD' data-subtext='Guyanaese Dollar'>GYD</option>
+        <option value='HKD' data-subtext='Hong Kong Dollar'>HKD</option>
+        <option value='HNL' data-subtext='Honduran Lempira'>HNL</option>
+        <option value='HRK' data-subtext='Croatian Kuna'>HRK</option>
+        <option value='HTG' data-subtext='Haitian Gourde'>HTG</option>
+        <option value='HUF' data-subtext='Hungarian Forint'>HUF</option>
+        <option value='IDR' data-subtext='Indonesian Rupiah'>IDR</option>
+        <option value='ILS' data-subtext='Israeli New Sheqel'>ILS</option>
+        <option value='IMP' data-subtext='Manx pound'>IMP</option>
+        <option value='INR' data-subtext='Indian Rupee'>INR</option>
+        <option value='IQD' data-subtext='Iraqi Dinar'>IQD</option>
+        <option value='IRR' data-subtext='Iranian Rial'>IRR</option>
+        <option value='ISK' data-subtext='Icelandic Króna'>ISK</option>
+        <option value='JEP' data-subtext='Jersey Pound'>JEP</option>
+        <option value='JMD' data-subtext='Jamaican Dollar'>JMD</option>
+        <option value='JOD' data-subtext='Jordanian Dinar'>JOD</option>
+        <option value='KES' data-subtext='Kenyan Shilling'>KES</option>
+        <option value='KGS' data-subtext='Kyrgystani Som'>KGS</option>
+        <option value='KHR' data-subtext='Cambodian Riel'>KHR</option>
+        <option value='KMF' data-subtext='Comorian Franc'>KMF</option>
+        <option value='KPW' data-subtext='North Korean Won'>KPW</option>
+        <option value='KRW' data-subtext='South Korean Won'>KRW</option>
+        <option value='KWD' data-subtext='Kuwaiti Dinar'>KWD</option>
+        <option value='KYD' data-subtext='Cayman Islands Dollar'>KYD</option>
+        <option value='KZT' data-subtext='Kazakhstani Tenge'>KZT</option>
+        <option value='LAK' data-subtext='Laotian Kip'>LAK</option>
+        <option value='LBP' data-subtext='Lebanese Pound'>LBP</option>
+        <option value='LKR' data-subtext='Sri Lankan Rupee'>LKR</option>
+        <option value='LRD' data-subtext='Liberian Dollar'>LRD</option>
+        <option value='LSL' data-subtext='Lesotho Loti'>LSL</option>
+        <option value='LTL' data-subtext='Lithuanian Litas'>LTL</option>
+        <option value='LVL' data-subtext='Latvian Lats'>LVL</option>
+        <option value='LYD' data-subtext='Libyan Dinar'>LYD</option>
+        <option value='MAD' data-subtext='Moroccan Dirham'>MAD</option>
+        <option value='MDL' data-subtext='Moldovan Leu'>MDL</option>
+        <option value='MGA' data-subtext='Malagasy Ariary'>MGA</option>
+        <option value='MKD' data-subtext='Macedonian Denar'>MKD</option>
+        <option value='MMK' data-subtext='Myanma Kyat'>MMK</option>
+        <option value='MNT' data-subtext='Mongolian Tugrik'>MNT</option>
+        <option value='MOP' data-subtext='Macanese Pataca'>MOP</option>
+        <option value='MRO' data-subtext='Mauritanian Ouguiya'>MRO</option>
+        <option value='MUR' data-subtext='Mauritian Rupee'>MUR</option>
+        <option value='MVR' data-subtext='Maldivian Rufiyaa'>MVR</option>
+        <option value='MWK' data-subtext='Malawian Kwacha'>MWK</option>
+        <option value='MXN' data-subtext='Mexican Peso'>MXN</option>
+        <option value='MYR' data-subtext='Malaysian Ringgit'>MYR</option>
+        <option value='MZN' data-subtext='Mozambican Metical'>MZN</option>
+        <option value='NAD' data-subtext='Namibian Dollar'>NAD</option>
+        <option value='NGN' data-subtext='Nigerian Naira'>NGN</option>
+        <option value='NIO' data-subtext='Nicaraguan Córdoba'>NIO</option>
+        <option value='NOK' data-subtext='Norwegian Krone'>NOK</option>
+        <option value='NPR' data-subtext='Nepalese Rupee'>NPR</option>
+        <option value='NZD' data-subtext='New Zealand Dollar'>NZD</option>
+        <option value='OMR' data-subtext='Omani Rial'>OMR</option>
+        <option value='PAB' data-subtext='Panamanian Balboa'>PAB</option>
+        <option value='PEN' data-subtext='Peruvian Nuevo Sol'>PEN</option>
+        <option value='PGK' data-subtext='Papua New Guinean Kina'>PGK</option>
+        <option value='PHP' data-subtext='Philippine Peso'>PHP</option>
+        <option value='PKR' data-subtext='Pakistani Rupee'>PKR</option>
+        <option value='PLN' data-subtext='Polish Zloty'>PLN</option>
+        <option value='PYG' data-subtext='Paraguayan Guarani'>PYG</option>
+        <option value='QAR' data-subtext='Qatari Rial'>QAR</option>
+        <option value='RON' data-subtext='Romanian Leu'>RON</option>
+        <option value='RSD' data-subtext='Serbian Dinar'>RSD</option>
+        <option value='RUB' data-subtext='Russian Ruble'>RUB</option>
+        <option value='RWF' data-subtext='Rwandan Franc'>RWF</option>
+        <option value='SAR' data-subtext='Saudi Riyal'>SAR</option>
+        <option value='SBD' data-subtext='Solomon Islands Dollar'>SBD</option>
+        <option value='SCR' data-subtext='Seychellois Rupee'>SCR</option>
+        <option value='SDG' data-subtext='Sudanese Pound'>SDG</option>
+        <option value='SEK' data-subtext='Swedish Krona'>SEK</option>
+        <option value='SGD' data-subtext='Singapore Dollar'>SGD</option>
+        <option value='SHP' data-subtext='Saint Helena Pound'>SHP</option>
+        <option value='SLL' data-subtext='Sierra Leonean Leone'>SLL</option>
+        <option value='SOS' data-subtext='Somali Shilling'>SOS</option>
+        <option value='SRD' data-subtext='Surinamese Dollar'>SRD</option>
+        <option value='STD' data-subtext='São Tomé and Príncipe Dobra'>STD</option>
+        <option value='SVC' data-subtext='Salvadoran Colón'>SVC</option>
+        <option value='SYP' data-subtext='Syrian Pound'>SYP</option>
+        <option value='SZL' data-subtext='Swazi Lilangeni'>SZL</option>
+        <option value='THB' data-subtext='Thai Baht'>THB</option>
+        <option value='TJS' data-subtext='Tajikistani Somoni'>TJS</option>
+        <option value='TMT' data-subtext='Turkmenistani Manat'>TMT</option>
+        <option value='TND' data-subtext='Tunisian Dinar'>TND</option>
+        <option value='TOP' data-subtext='Tongan Pa?anga'>TOP</option>
+        <option value='TRY' data-subtext='Turkish Lira'>TRY</option>
+        <option value='TTD' data-subtext='Trinidad and Tobago Dollar'>TTD</option>
+        <option value='TWD' data-subtext='New Taiwan Dollar'>TWD</option>
+        <option value='TZS' data-subtext='Tanzanian Shilling'>TZS</option>
+        <option value='UAH' data-subtext='Ukrainian Hryvnia'>UAH</option>
+        <option value='UGX' data-subtext='Ugandan Shilling'>UGX</option>
+        <option value='UYU' data-subtext='Uruguayan Peso'>UYU</option>
+        <option value='UZS' data-subtext='Uzbekistan Som'>UZS</option>
+        <option value='VEF' data-subtext='Venezuelan Bolívar'>VEF</option>
+        <option value='VND' data-subtext='Vietnamese Dong'>VND</option>
+        <option value='VUV' data-subtext='Vanuatu Vatu'>VUV</option>
+        <option value='WST' data-subtext='Samoan Tala'>WST</option>
+        <option value='XAF' data-subtext='CFA Franc BEAC'>XAF</option>
+        <option value='XAG' data-subtext='Silver (troy ounce)'>XAG</option>
+        <option value='XAU' data-subtext='Gold (troy ounce)'>XAU</option>
+        <option value='XCD' data-subtext='East Caribbean Dollar'>XCD</option>
+        <option value='XDR' data-subtext='Special Drawing Rights'>XDR</option>
+        <option value='XOF' data-subtext='CFA Franc BCEAO'>XOF</option>
+        <option value='XPF' data-subtext='CFP Franc'>XPF</option>
+        <option value='YER' data-subtext='Yemeni Rial'>YER</option>
+        <option value='ZAR' data-subtext='South African Rand'>ZAR</option>
+        <option value='ZMK' data-subtext='Zambian Kwacha (pre-2013)'>ZMK</option>
+        <option value='ZMW' data-subtext='Zambian Kwacha'>ZWL</option>
+        <option value='ZWL' data-subtext='Zimbabwean Dollar'>ZWL</option>
+    </optgroup>
+</body>
+</html>

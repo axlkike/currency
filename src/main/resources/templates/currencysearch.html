@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <script src="../../static/js/jquery-1.12.1.min.js" th:src="@{/js/jquery-1.12.1.min.js}"></script>
+    <script src="../../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="../../static/js/bootstrap-datepicker.min.js" th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+    <script src="../../static/js/bootstrap-select.min.js" th:src="@{/js/bootstrap-select.min.js}"></script>
+    <script src="../../static/js/moment.js" th:src="@{/js/moment.js}"></script>
+
+    <link href="../../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/bootstrap-theme.min.css" th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/bootstrap-select.min.css" th:href="@{/css/bootstrap-select.min.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/bootstrap-datepicker3.standalone.min.css" th:href="@{/css/bootstrap-datepicker3.standalone.min.css}" rel="stylesheet" media="screen" />
+
+</head>
+<body>
+<div class="container">
+    <th:block th:include="fragments/header :: header"></th:block>
+
+    <!--<th:block th:include="fragments/currencyform :: currencyform"></th:block>-->
+
+    <form th:name="currForm" th:id="currencyform" class="form-horizontal"  th:object="${currencysearchform}" th:action="@{/savecurrency}" method="post">
+        <input type="hidden" th:id="idId" th:field="*{id}"  />
+        <input type="hidden" th:field="*{userId}" />
+        <input type="hidden" th:field="*{searchDate}" />
+        <input type="hidden" th:field="*{exchange}" />
+        <input type="hidden" th:id="historical" th:field="*{historical}" />
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" th:text="#{label_currFrom}" >From</label>
+            <div class="col-sm-10">
+
+                <select id="currFrom" th:field="*{currFrom}" class="selectpicker show-tick "  >
+                   <th:block th:include="fragments/curropts :: curropts"></th:block>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" th:text="#{label_currTo}" >From</label>
+            <div class="col-sm-10">
+                <select id="currTo"  th:field="*{currTo}" class="selectpicker show-tick"  >
+                    <th:block th:include="fragments/curropts :: curropts"></th:block>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" th:text="#{label_historicalDate}">From</label>
+            <div class="col-sm-10">
+                  <input th:type="text" id="auxHistDate"  name="auxHistDate" onchange="javascript:assignVal();" />
+                  <span class="errortxt" th:if="${#fields.hasErrors('searchDate')}" th:errors="*{searchDate}" >Error</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-default" th:text="#{btn_save}" >Save</button>
+        </div>
+
+    </form>
+
+
+    <h3 th:text="#{label_CurrSearchList}">Currency Search List</h3>
+
+    <div th:if="${not #lists.isEmpty(currencysearchlist)}">
+        <table class="table table-striped">
+            <tr>
+                <th th:text="#{label_id}">Id</th>
+                <th sec:authorize="hasRole('ADMIN')" th:text="#{label_username}">username</th>
+                <th th:text="#{label_searchDate}">Search Date</th>
+                <th th:text="#{label_historical}">Historical</th>
+                <th th:text="#{label_currFrom}">From</th>
+                <th th:text="#{label_currTo}">To</th>
+                <th th:text="#{label_exchange}">Exchange</th>
+
+            </tr>
+            <tr th:each="currsearch : ${currencysearchlist}">
+                <td th:text="${currsearch.id}"></td>
+                <td sec:authorize="hasRole('ADMIN')" th:text="${currsearch.userId}"></td>
+                <td th:text="${#joda.mediumDate(currsearch.searchDate)}">Search Date</td>
+                <td th:if="${currsearch.historical}" th:text="#{label_yes}">NO</td>
+                <td th:if="${!currsearch.historical}" th:text="#{label_no}">NO</td>
+                <td th:text="${currsearch.currFrom}">From</td>
+                <td th:text="${currsearch.currTo}">To</td>
+                <td th:text="${currsearch.exchange}">Exchange</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div th:replace="fragments/footer :: footer">Footer</div>
+</div>
+
+<script th:inline="javascript">
+
+    /*<![CDATA[*/
+        $(function() {
+                // initialize date picker
+                $('#auxHistDate').datepicker({
+                        format: [[#{date_format}]],
+                        autoclose: true
+                        });
+                });
+                // initialize v
+                $('#currTo').val('EUR');
+                $('#currTo').selectpicker('render');
+                $('#historical').val('false');
+                $('#idId').val(null);
+
+
+        function assignVal() {
+            $('#searchDate').val(moment($('#auxHistDate').val(), [[#{date_format}]].toUpperCase()).format("YYYY-MM-DD"));
+
+            if ( moment( $('#searchDate').val(), 'YYYY-MM-DD', true).isValid()) {
+                $('#historical').val('true');
+            } else {
+                $('#historical').val('false');
+            }
+         }
+
+   /*]]>*/
+</script>
+
+</body>
+</html>
