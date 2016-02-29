@@ -1,0 +1,21 @@
+
+general:
+  artifacts:
+    - "target/currency-*.jar"
+machine:
+  java:
+    version: oraclejdk8
+dependencies:
+  override:
+    - sudo pip install --upgrade pip
+    - sudo pip install awscli
+    - mvn dependency:resolve
+test:
+  override:
+    - mvn integration-test
+deployment:
+  release:
+    branch: master
+    commands:
+      - mvn package
+      - aws --version
